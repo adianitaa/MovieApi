@@ -1,0 +1,15 @@
+@import 'swiper/css';
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: black;
+  color: black;
+  background-color: #ffffff;
+}
+
+h1 {
+  line-height: 1.1;
+}
