@@ -42,7 +42,7 @@ export default function MovieList() {
 
   return (
     <div className="w-full px-8">
-      <h1>Películas Populares</h1>
+      <h1 className="text-2xl font-bold my-4">Películas Populares</h1>
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={30}
@@ -57,21 +57,26 @@ export default function MovieList() {
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
-            <div>
-              <Link to={`/movie/${movie.id}`}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                  alt={movie.title}
-                  style={{
-                    width: '100%',
-                    maxWidth: '200px',
-                    height: 'auto',
-                    borderRadius: '8px',
-                  }}
-                />
-                <h2 style={{ marginTop: '0.5rem', fontSize: '1rem', fontWeight: 'bold' }}>{movie.title}</h2>
-                <p style={{ fontSize: '0.875rem', color: '#000' }}>{movie.release_date}</p>
-                <p style={{ fontSize: '0.875rem', color: '#000' }}>⭐ {movie.vote_average}</p>
+            <div className="bg-white shadow-md p-4 rounded-lg flex flex-col items-center text-center">
+              <img
+                src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                alt={movie.title}
+                style={{
+                  width: '100%',
+                  maxWidth: '200px',
+                  height: 'auto',
+                  borderRadius: '8px',
+                }}
+              />
+              <h2 className="mt-2 text-lg font-bold">{movie.title}</h2>
+              <p className="text-sm text-gray-600">{movie.release_date}</p>
+              <p className="text-sm text-gray-700">⭐ {movie.vote_average}</p>
+
+              <Link
+                to={`/movie/${movie.id}`}
+                className="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+              >
+                Ver información
               </Link>
             </div>
           </SwiperSlide>

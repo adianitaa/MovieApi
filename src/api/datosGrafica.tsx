@@ -48,7 +48,7 @@ const Metrics = () => {
 
     // Formato para gráfico Pie
     const genreData = Object.entries(genreCounts).map(([id, count]) => ({
-        name: `ID ${id}`, //mapear estos IDs a nombres si haces otra petición
+        name: `ID ${id}`,
         value: count
     }));
 
